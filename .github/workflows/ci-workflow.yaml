@@ -21,7 +21,9 @@ jobs:
       run: cd DotnetTemplate.Web && npm run build
 
     - name: Run TS linter
-      run: cd DotnetTemplate.Web && npm run lint
+      uses: icrawl/action-eslint@v1
+      with:
+        custom-glob: DotnetTemplate.Web
     
     - name: typescript tests
       run: cd DotnetTemplate.Web && npm t
