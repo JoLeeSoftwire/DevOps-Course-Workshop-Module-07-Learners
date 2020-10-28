@@ -54,7 +54,8 @@ pipeline {
                 sh 'cd DotnetTemplate.Web && npm t'
             }
         }
-        post {
+    }
+    post {
         always {
             echo 'One way or another, I have finished'
             deleteDir() /* clean up our workspace */
@@ -78,6 +79,5 @@ pipeline {
             color: 'warning',
             message: "this was a change, maybe party, maybe not on ${currentBuild.fullDisplayName}"
         }
-    }
     }
 }
