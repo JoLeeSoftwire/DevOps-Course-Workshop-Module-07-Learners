@@ -56,9 +56,6 @@ pipeline {
         }
     }
     post {
-        always {
-            deleteDir() /* clean up our workspace */
-        }
         success {
             slackSend channel: '#jos-test-website',
             color: 'good',
