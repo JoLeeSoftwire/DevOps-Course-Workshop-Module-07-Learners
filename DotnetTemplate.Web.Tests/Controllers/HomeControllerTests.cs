@@ -8,7 +8,7 @@ namespace DotnetTemplate.Web.Tests.Controllers
 
     public class HomeControllerTests
     {
-        private HomeController controller;
+        private HomeController controller_;
 
         [SetUp]
         public void SetUp()
