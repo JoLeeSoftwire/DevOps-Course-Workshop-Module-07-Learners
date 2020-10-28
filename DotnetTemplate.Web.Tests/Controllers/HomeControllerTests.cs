@@ -8,7 +8,7 @@ namespace DotnetTemplate.Web.Tests.Controllers
 
     public class HomeControllerTests
     {
-        private HomeController controller_;
+        private HomeController controller;
 
         [SetUp]
         public void SetUp()
@@ -24,8 +24,9 @@ namespace DotnetTemplate.Web.Tests.Controllers
 
             // Then
             var expectedModel = new FirstPageViewModel();
-            result.Should().BeViewResult()
-                .Model.Should().BeEquivalentTo(expectedModel);
+            // result.Should().BeViewResult()
+                // .Model.Should().BeEquivalentTo(expectedModel);
+            true.Should().Be(false);
         }
 
         [Test]
