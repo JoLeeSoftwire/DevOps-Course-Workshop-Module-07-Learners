@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('C#') {
             agent {
-                docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
+                // docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
+                docker { image 'node:14-alpine' }
             }
             steps {
                 sh 'dotnet build'
