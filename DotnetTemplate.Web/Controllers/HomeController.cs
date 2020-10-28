@@ -10,7 +10,7 @@ namespace DotnetTemplate.Web.Controllers
 
         public IActionResult FirstPage()
         {
-            var modelx = new FirstPageViewModel();
+            var model = new FirstPageViewModel();
             return View(model);
         }
 
