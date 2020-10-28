@@ -8,11 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
       
-    # - name: Build C#
-    #   run: dotnet build
+    - name: Build C#
+      run: dotnet build
 
-    # - name: C# Tests
-    #   run: dotnet test
+    - name: C# Tests
+      run: dotnet test
 
     - name: install dependencies
       run: npm install
