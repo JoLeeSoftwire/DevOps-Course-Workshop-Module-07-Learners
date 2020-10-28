@@ -6,7 +6,7 @@ import Radios from 'nhsuk-frontend/packages/components/radios/radios';
 import Checkboxes from 'nhsuk-frontend/packages/components/checkboxes/checkboxes';
 
 // Polyfills
-import 'nhsuk-frontend/packages/polyfills';
+pimport 'nhsuk-frontend/packages/polyfills';
 import 'core-js/stable';
 
 // Initialize components
