@@ -7,8 +7,8 @@ pipeline {
                 docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
             }
             steps {
-                dotnet build
-                dotnet test
+                sh 'dotnet build'
+                sh 'dotnet test'
             }
         }
         stage('Typescript') {
@@ -16,11 +16,11 @@ pipeline {
                 docker { image 'node:14-alpine' }
             }
             steps {
-                cd DotnetTemplate.Web
-                sh npm install
-                sh npm run build
-                sh npm run lint
-                sh npm t
+                sh 'cd DotnetTemplate.Web'
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'npm run lint'
+                sh 'npm t'
             }
         }
     }
