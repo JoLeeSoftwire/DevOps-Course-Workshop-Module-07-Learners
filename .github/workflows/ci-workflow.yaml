@@ -23,7 +23,11 @@ jobs:
       working-directory: DotnetTemplate.Web
 
     - name: Run TS linter
-      uses: icrawl/action-eslint@v1
+      uses: wearerequired/lint-action@v1
+      with:
+        github_token: ${{ secrets.github_token }}
+        eslint: true
+        eslint_dir: DotnetTemplate.Web/
     
     - name: typescript tests
       run: npm t
