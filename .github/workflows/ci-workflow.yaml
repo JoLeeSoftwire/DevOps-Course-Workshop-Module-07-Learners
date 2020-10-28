@@ -22,8 +22,7 @@ jobs:
 
     - name: Run TS linter
       uses: icrawl/action-eslint@v1
-      with:
-        custom-glob: DotnetTemplate.Web
+      working-directory: ./DotnetTemplate.Web
     
     - name: typescript tests
       run: cd DotnetTemplate.Web && npm t
