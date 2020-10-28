@@ -2,20 +2,14 @@ pipeline {
     agent none
 
     stages {
-        stage('trivial') {
-            agent {
-                docker { image 'node:14-alpine' }
-            }
-            steps {
-                sh 'echo test'
-            }
-        }
         stage('C#') {
             agent {
                 docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
             }
+            environment {
+                DOTNET_CLI_HOME = "/tmp/DOTNET_CLI_HOME"
+            }
             steps {
-                sh 'echo c#ing'
                 sh 'dotnet build'
                 sh 'dotnet test'
             }
