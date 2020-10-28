@@ -7,6 +7,7 @@ pipeline {
                 docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
             }
             steps {
+                sh 'echo c#ing'
                 sh 'dotnet build'
                 sh 'dotnet test'
             }
