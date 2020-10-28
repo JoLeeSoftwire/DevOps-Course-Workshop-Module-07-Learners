@@ -2,16 +2,16 @@ pipeline {
     agent none
 
     stages {
-        stage('C#') {
-            agent {
-                // docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
-                docker { image 'node:14-alpine' }
-            }
-            steps {
-                sh 'dotnet build'
-                sh 'dotnet test'
-            }
-        }
+        // stage('C#') {
+        //     agent {
+        //         // docker { image 'mcr.microsoft.com/dotnet/core/sdk' }
+        //         docker { image 'node:14-alpine' }
+        //     }
+        //     steps {
+        //         sh 'dotnet build'
+        //         sh 'dotnet test'
+        //     }
+        // }
         stage('Typescript') {
             agent {
                 docker { image 'node:14-alpine' }
