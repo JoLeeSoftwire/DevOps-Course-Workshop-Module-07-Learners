@@ -54,5 +54,30 @@ pipeline {
                 sh 'cd DotnetTemplate.Web && npm t'
             }
         }
+        post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            slackSend channel: '#jos-test-website'
+            color: 'good',
+            message: "the site built happily on ${currentBuild.fullDisplayName}"
+
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            slackSend channel: '#jos-test-website'
+            color: 'danger',
+            message: "the site did not build, sadface :( on ${currentBuild.fullDisplayName}"
+        }
+        changed {
+            slackSend channel: '#jos-test-website'
+            color: 'warning',
+            message: "this was a change, maybe party, maybe not on ${currentBuild.fullDisplayName}"
+        }
+    }
     }
 }
