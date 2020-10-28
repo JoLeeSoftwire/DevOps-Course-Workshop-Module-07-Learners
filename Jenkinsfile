@@ -17,10 +17,10 @@ pipeline {
             }
             steps {
                 cd DotnetTemplate.Web
-                npm install
-                npm run build
-                npm run lint
-                npm t
+                sh npm install
+                sh npm run build
+                sh npm run lint
+                sh npm t
             }
         }
     }
