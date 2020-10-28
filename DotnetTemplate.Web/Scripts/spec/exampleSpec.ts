@@ -7,6 +7,6 @@ describe('Example', () => {
     const sum = one + one;
 
     // Then
-    expect(sum).toEqual(2);
+    expect(sum).toEqual(0);
   });
 });
