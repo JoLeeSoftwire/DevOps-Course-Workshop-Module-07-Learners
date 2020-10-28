@@ -8,21 +8,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
       
-    - name: Build C#
-      run: dotnet build
+    # - name: Build C#
+    #   run: dotnet build
 
-    - name: C# Tests
-      run: dotnet test
+    # - name: C# Tests
+    #   run: dotnet test
 
     - name: install dependencies
-      run: cd DotnetTemplate.Web && npm install
+      run: npm install
+      working-directory: DotnetTemplate.Web
 
     - name: Build typescript
-      run: cd DotnetTemplate.Web && npm run build
+      run: npm run build
+      working-directory: DotnetTemplate.Web
 
     - name: Run TS linter
       uses: icrawl/action-eslint@v1
-      working-directory: ./DotnetTemplate.Web
     
     - name: typescript tests
-      run: cd DotnetTemplate.Web && npm t
+      run: npm t
+      working-directory: DotnetTemplate.Web
