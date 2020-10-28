@@ -24,9 +24,8 @@ namespace DotnetTemplate.Web.Tests.Controllers
 
             // Then
             var expectedModel = new FirstPageViewModel();
-            // result.Should().BeViewResult()
-                // .Model.Should().BeEquivalentTo(expectedModel);
-            true.Should().Be(false);
+            result.Should().BeViewResult()
+                .Model.Should().BeEquivalentTo(expectedModel);
         }
 
         [Test]
